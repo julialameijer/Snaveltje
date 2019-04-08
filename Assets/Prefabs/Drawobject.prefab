@@ -50,6 +50,16 @@ TrailRenderer:
   m_RendererPriority: 1
   m_Materials:
   - {fileID: 2100000, guid: b4b2be9e2eeb78b4ab277ad109b50229, type: 2}
+  - {fileID: 2100000, guid: 772138e5649bba048a026643f1bbcd48, type: 2}
+  - {fileID: 2100000, guid: 0bd0d9a9a05e60d4091c880845bc6653, type: 2}
+  - {fileID: 2100000, guid: f44306cf59297574a9ff9ecfdfbf02b8, type: 2}
+  - {fileID: 2100000, guid: 99c049182149af046b3db9c6d44b284f, type: 2}
+  - {fileID: 2100000, guid: 83f28f7e9c3978c45ab4de63bcb41d63, type: 2}
+  - {fileID: 2100000, guid: 5af1c420c1f23a94f8f0dbdb889a0497, type: 2}
+  - {fileID: 2100000, guid: 01e3dc1eed041b24d97e63d044823db4, type: 2}
+  - {fileID: 2100000, guid: 3edfc9a2a9d5d2b489b8ea8001866ccf, type: 2}
+  - {fileID: 2100000, guid: 9a05c6839fed2b940b35d20884b504d6, type: 2}
+  - {fileID: 2100000, guid: 0b1c1e8289416764bb8d339d14a16636, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

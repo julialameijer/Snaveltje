@@ -26,7 +26,7 @@ public class OpenQuestionHandler : MonoBehaviour
 
 
     private int finalnumber;
-    Player player;
+    private Player player;
 
     private PlayerCreator playerCreator;
 

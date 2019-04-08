@@ -35,6 +35,9 @@ public class ScannerScript: MonoBehaviour
     private QuestionHandler questionHandler;
 
     [SerializeField]
+    private AssignmentHandler assignmentHandler;
+
+    [SerializeField]
     private GameObject scanObject;
 
     [SerializeField]
@@ -116,6 +119,7 @@ public class ScannerScript: MonoBehaviour
                     break;
 
                 case 3:
+                    assignmentHandler.setQuestion(barcodevalue);
                     sceneSwitcher.newElement(assignmentObject);
                     sceneSwitcher.oldElement(scanObject);
                     break;

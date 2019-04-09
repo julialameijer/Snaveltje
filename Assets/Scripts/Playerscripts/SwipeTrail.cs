@@ -24,7 +24,6 @@ public class SwipeTrail : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         this.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
 
-        print(Input.mousePosition);
         if(Input.mousePosition.x > 295.6 && Input.mousePosition.x < 1618 && Input.mousePosition.y < 800)
         {
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began || Input.GetMouseButtonDown(0))

@@ -22,7 +22,6 @@ public class QuestionHandler : MonoBehaviour
     [SerializeField]
     private Question[] questions;
 
-    private PlayerCreator playerCreator;
     private Player player;
 
 
@@ -30,8 +29,6 @@ public class QuestionHandler : MonoBehaviour
 
     void Start()
     {
-        playerCreator = GameObject.Find("__PlayerGameManager").GetComponent<PlayerCreator>();
-        player = playerCreator.getPlayer();
     }
 
     public void setQuestion(int listIndex)
@@ -69,8 +66,6 @@ public class QuestionHandler : MonoBehaviour
 
     public void addAnswerToFile(Player player, string question, string answer, bool isCorrect)
     {
-        string path = Application.dataPath + "/AnswerFiles" + "/" + player.getName() + ".txt";
-        File.AppendAllText(path, "\n" + "Question: " + question + ", Answer given: " + answer + ", Correct answered: " + isCorrect);
     }
 
 }

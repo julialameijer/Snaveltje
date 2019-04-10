@@ -16,7 +16,6 @@ public class AssignmentHandler : MonoBehaviour
 
     private Camera _camera;
     private bool saveImageOnNextFrame;
-    private PlayerCreator playerCreator;
 
     // Start is called before the first frame update
     void Start()

@@ -28,12 +28,9 @@ public class OpenQuestionHandler : MonoBehaviour
     private int finalnumber;
     private Player player;
 
-    private PlayerCreator playerCreator;
 
     void Start()
     {
-        playerCreator = GameObject.Find("__PlayerGameManager").GetComponent<PlayerCreator>();
-        player = playerCreator.getPlayer();
     }
 
     public void setQuestion(int listIndex)
@@ -43,15 +40,6 @@ public class OpenQuestionHandler : MonoBehaviour
         questionText.text = text;
     }
 
-    public void checkQuestion(InputField answer)
-    {
-        nameOfTeam.text = player.getName();
-        answerOfTeam.text = answer.text;
-        questionOfTeam.text = getCurrentQuestion().question;
-
-        
-        print("Player: " + player.getName() + " Current Question: " + getCurrentQuestion().question + " Answer: " + answer.text);
-    }
 
     private OpenQuestion getCurrentQuestion()
     {
@@ -60,8 +48,6 @@ public class OpenQuestionHandler : MonoBehaviour
 
     public void addAnswerToFile(Player player, string question, string answer, bool isTrue)
     {
-        string path = Application.dataPath + "/AnswerFiles" + "/" + player.getName() + ".txt";
-        File.AppendAllText(path, "\n" + "Question: " + question + " Answer given: " + answer + ", This answer is " + isTrue);
     }
 
     public void isTrue()

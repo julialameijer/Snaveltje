@@ -40,7 +40,39 @@ Vuforia.ITrackableEventHandler
         {
             st = 1;
             string imageName = mTrackableBehaviour.TrackableName;
-            headerText.text = imageName;
+            switch (imageName)
+            {   
+                case "Konijn":
+                        
+                    break;
+                case "Bij_Vlinder":
+                    
+                    break;
+                case "Horse":
+                    
+                    break;
+                case "Hedgehog":
+                    
+                    break;
+                case "Fox":
+                    
+                    break;
+                case "Dog":
+                    
+                    break;
+                case "Duck":
+                    
+                    break;
+                case "Deer":
+
+                    break;
+                case "Cat":
+
+                    break;
+                case "Snaveltje":
+
+                    break;
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Vuforia;
 using System.Diagnostics;
@@ -8,7 +9,8 @@ using Debug = UnityEngine.Debug;
 public class DetectImage : MonoBehaviour,
 Vuforia.ITrackableEventHandler
 {
-
+    [SerializeField]
+    private Text headerText;
     private TrackableBehaviour mTrackableBehaviour;
     public static int st = 0;
 
@@ -37,7 +39,8 @@ Vuforia.ITrackableEventHandler
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
             st = 1;
-            SceneManager.LoadScene("GameScene");
+            string imageName = mTrackableBehaviour.TrackableName;
+            headerText.text = imageName;
         }
     }
 }

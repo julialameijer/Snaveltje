@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Cat
+  - Snaveltje
+  - Dog
+  - Deer
+  - Donkey
+  - Horse
+  - Fox
+  - Butterfly
+  - Hedgehog
+  - Rabbit
+  - Bee
   layers:
   - Default
   - TransparentFX

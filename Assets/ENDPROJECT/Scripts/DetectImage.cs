@@ -11,11 +11,18 @@ Vuforia.ITrackableEventHandler
 {
     [SerializeField]
     private Text headerText;
+    private GameObject gameManagerObject;
+    private GameManager gameManagerScript;
+
     private TrackableBehaviour mTrackableBehaviour;
     public static int st = 0;
 
     void Start()
     {
+        gameManagerObject = GameObject.Find("GameManager");
+        TrackerManager.Instance.GetStateManager().ReassociateTrackables();
+
+        gameManagerScript = gameManagerObject.GetComponent<GameManager>();
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
         {
@@ -25,7 +32,7 @@ Vuforia.ITrackableEventHandler
 
     public void OnTrackableStateChanged(TrackableBehaviour.Status newStatus)
     {
-        OnTrackableStateChanged(default(TrackableBehaviour.Status), newStatus);
+        OnTrackableStateChanged(default(TrackableBehaviour.Status), newStatus);     
     }
 
     public void OnTrackableStateChanged(
@@ -40,39 +47,8 @@ Vuforia.ITrackableEventHandler
         {
             st = 1;
             string imageName = mTrackableBehaviour.TrackableName;
-            switch (imageName)
-            {   
-                case "Konijn":
-                        
-                    break;
-                case "Bij_Vlinder":
-                    
-                    break;
-                case "Horse":
-                    
-                    break;
-                case "Hedgehog":
-                    
-                    break;
-                case "Fox":
-                    
-                    break;
-                case "Dog":
-                    
-                    break;
-                case "Duck":
-                    
-                    break;
-                case "Deer":
-
-                    break;
-                case "Cat":
-
-                    break;
-                case "Snaveltje":
-
-                    break;
-            }
+            TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
+            gameManagerScript.passQuestion(int.Parse(imageName));
         }
     }
 }

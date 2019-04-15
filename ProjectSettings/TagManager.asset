@@ -15,6 +15,7 @@ TagManager:
   - Hedgehog
   - Rabbit
   - Bee
+  - QuestionHandler
   layers:
   - Default
   - TransparentFX

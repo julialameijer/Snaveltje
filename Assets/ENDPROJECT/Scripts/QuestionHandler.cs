@@ -6,66 +6,58 @@ using System.IO;
 
 public class QuestionHandler : MonoBehaviour
 {
-    [SerializeField]
-    private Text questionText;
+    private GameObject gameManagerObject;
+    private GameObject sceneSwitcherObject;
 
-    [SerializeField]
-    private Button answerA;
+    private GameManager gamemanagerScript;
+    private PlayerManager playerManager;
+    private SceneSwitcher sceneSwitcher;
 
+    [SerializeField] private Text questionText;
+    [SerializeField] private Text A;
+    [SerializeField] private Text B;
+    [SerializeField] private Text C;
+    [SerializeField] private OpenQuestion[] openQuestions;
+    [SerializeField] private Question[] multipleChoiceQuestions;
+    [SerializeField] private Assignment[] assignments;
 
-    [SerializeField]
-    private Button answerB;
+    [SerializeField] private GameObject openQuestion;
+    [SerializeField] private GameObject assignment;
+    [SerializeField] private GameObject multipleChoiceQuestion;
 
-    [SerializeField]
-    private Button answerC;
-
-    [SerializeField]
-    private Question[] questions;
-
-    private Player player;
-
-
-    private int finalnumber;
 
     void Start()
     {
+        gameManagerObject = GameObject.Find("GameManager");
+        sceneSwitcherObject = GameObject.Find("Sceneswitcher");
+        gamemanagerScript = gameManagerObject.GetComponent<GameManager>();
+        playerManager =   gameManagerObject.GetComponent<PlayerManager>();
+        sceneSwitcher = sceneSwitcherObject.GetComponent<SceneSwitcher>();
     }
 
-    public void setQuestion(int listIndex)
+
+    public void setMultipleChoice(int index)
+    { 
+        Question question = multipleChoiceQuestions[index];
+        questionText.text = question.question;
+
+        sceneSwitcher.newElement(multipleChoiceQuestion);
+
+        A.text = question.answerA;
+        B.text = question.answerB;
+        C.text = question.answerC;
+    }
+
+    public void setOpenQuestion(int index)
     {
-        
-        finalnumber = listIndex;
-         string text = questions[listIndex].question;
-        questionText.text = text;
-
-        answerA.GetComponentInChildren<Text>().text = questions[listIndex].answerA;
-        answerB.GetComponentInChildren<Text>().text = questions[listIndex].answerB;
-        answerC.GetComponentInChildren<Text>().text = questions[listIndex].answerC;
+        OpenQuestion question = openQuestions[index];
+        questionText.text = question.question;
+        sceneSwitcher.newElement(openQuestion);
     }
 
-    public void checkQuestion(string answer)
+    public void setAssignment(int index)
     {
-        Question question;
-
-        question = getCurrentQuestion();
-        if (question.rightAnswer == answer)
-        {
-            addAnswerToFile(player, question.question, answer, true);
-        }
-        else
-        {
-            addAnswerToFile(player, question.question, answer, false);
-        }
-        
+        Assignment assignment = assignments[index];
+        questionText.text = assignment.assignment;
     }
-
-    private Question getCurrentQuestion()
-    {
-        return questions[finalnumber];
-    }
-
-    public void addAnswerToFile(Player player, string question, string answer, bool isCorrect)
-    {
-    }
-
 }

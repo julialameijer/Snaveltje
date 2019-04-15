@@ -378,7 +378,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: ScannerScene
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -496,8 +496,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1820, y: 980}
+  m_AnchoredPosition: {x: -6, y: 0}
+  m_SizeDelta: {x: 2074, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &298752990
 MonoBehaviour:
@@ -880,8 +880,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1511392723}
-        m_MethodName: 
+      - m_Target: {fileID: 1511392727}
+        m_MethodName: newElement
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 298752988}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1511392727}
+        m_MethodName: oldElement
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1999168081}

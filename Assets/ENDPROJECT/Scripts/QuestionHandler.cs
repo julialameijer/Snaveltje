@@ -28,6 +28,7 @@ public class QuestionHandler : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(this);
         gameManagerObject = GameObject.Find("GameManager");
         sceneSwitcherObject = GameObject.Find("Sceneswitcher");
         gamemanagerScript = gameManagerObject.GetComponent<GameManager>();

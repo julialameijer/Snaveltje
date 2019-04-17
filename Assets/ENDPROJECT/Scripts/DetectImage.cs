@@ -13,6 +13,7 @@ Vuforia.ITrackableEventHandler
     private Text headerText;
     private GameObject gameManagerObject;
     private GameManager gameManagerScript;
+    private SceneSwitcher sceneSwitcherScript;
 
     private TrackableBehaviour mTrackableBehaviour;
     public static int st = 0;
@@ -20,9 +21,11 @@ Vuforia.ITrackableEventHandler
     void Start()
     {
         gameManagerObject = GameObject.Find("GameManager");
+
         TrackerManager.Instance.GetStateManager().ReassociateTrackables();
 
         gameManagerScript = gameManagerObject.GetComponent<GameManager>();
+        sceneSwitcherScript = gameManagerObject.GetComponent<SceneSwitcher>();
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
         {
@@ -49,6 +52,12 @@ Vuforia.ITrackableEventHandler
             string imageName = mTrackableBehaviour.TrackableName;
             TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
             gameManagerScript.passQuestion(int.Parse(imageName));
+            sceneSwitcherScript.switchScene("GameScene");
         }
+    }
+
+    public void TESTGoNextScene()
+    {
+        gameManagerScript.passQuestion(2);
     }
 }

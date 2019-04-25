@@ -13,6 +13,8 @@ public class QuestionHandler : MonoBehaviour
     private PlayerManager playerManager;
     private SceneSwitcher sceneSwitcher;
 
+    private int index;
+
     [SerializeField] private Text questionText;
     [SerializeField] private Text A;
     [SerializeField] private Text B;
@@ -24,11 +26,14 @@ public class QuestionHandler : MonoBehaviour
     [SerializeField] private GameObject openQuestion;
     [SerializeField] private GameObject assignment;
     [SerializeField] private GameObject multipleChoiceQuestion;
+    [SerializeField] private GameObject questionObject;
+    [SerializeField] private GameObject rightAnswer;
+    [SerializeField] private GameObject wrongAnswer;
 
+    
 
     void Start()
     {
-        DontDestroyOnLoad(this);
         gameManagerObject = GameObject.Find("GameManager");
         sceneSwitcherObject = GameObject.Find("Sceneswitcher");
         gamemanagerScript = gameManagerObject.GetComponent<GameManager>();
@@ -38,12 +43,11 @@ public class QuestionHandler : MonoBehaviour
 
 
     public void setMultipleChoice(int index)
-    { 
+    {
+        this.index = index;
         Question question = multipleChoiceQuestions[index];
         questionText.text = question.question;
-
         sceneSwitcher.newElement(multipleChoiceQuestion);
-
         A.text = question.answerA;
         B.text = question.answerB;
         C.text = question.answerC;
@@ -51,6 +55,7 @@ public class QuestionHandler : MonoBehaviour
 
     public void setOpenQuestion(int index)
     {
+        this.index = index;
         OpenQuestion question = openQuestions[index];
         questionText.text = question.question;
         sceneSwitcher.newElement(openQuestion);
@@ -58,7 +63,24 @@ public class QuestionHandler : MonoBehaviour
 
     public void setAssignment(int index)
     {
+        this.index = index;
+
         Assignment assignment = assignments[index];
         questionText.text = assignment.assignment;
+    }
+
+    public void checkMultipleChoice(string answer)
+    {
+        if(answer == multipleChoiceQuestions[index].rightAnswer)
+        {
+            sceneSwitcher.oldElement(questionObject);
+            sceneSwitcher.newElement(rightAnswer);
+        }
+
+        else
+        {
+            sceneSwitcher.newElement(wrongAnswer);
+            sceneSwitcher.oldElement(questionObject);
+        }
     }
 }

@@ -49,15 +49,39 @@ Vuforia.ITrackableEventHandler
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
             st = 1;
-            string imageName = mTrackableBehaviour.TrackableName;
+            int imageName = int.Parse(mTrackableBehaviour.Trackable.Name);
             TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
-            gameManagerScript.passQuestion(int.Parse(imageName));
-            sceneSwitcherScript.switchScene("GameScene");
+           
+            print("Is Scanned: " + imageName);
+            if(imageName == gameManagerScript.getNextQuestionIndex())
+            {
+                print("Good Scan!");
+                gameManagerScript.passQuestion(imageName);
+                sceneSwitcherScript.switchScene("GameScene");
+            }
+            else 
+            {
+                print("Wrong Scan!");
+                TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
+
+            }
         }
     }
 
     public void TESTGoNextScene()
     {
-        gameManagerScript.passQuestion(2);
+        int questionnumber = Random.Range(1, 10);
+        print("Is: " + questionnumber);
+        print("Should be: " + gameManagerScript.getNextQuestionIndex());
+        if (questionnumber == gameManagerScript.getNextQuestionIndex())
+        {
+            print("Good Scan!");
+            gameManagerScript.passQuestion(questionnumber);
+            sceneSwitcherScript.switchScene("GameScene");
+        }
+        else
+        {
+            print("This is the wrong one!");
+        }
     }
 }

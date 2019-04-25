@@ -48,6 +48,7 @@ public class OpenQuestionHandler : MonoBehaviour
 
     public void addAnswerToFile(Player player, string question, string answer, bool isTrue)
     {
+
     }
 
     public void isTrue()

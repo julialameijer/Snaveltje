@@ -43,10 +43,4 @@ public class Player
     {
         currentPlayingQuestion = questionIndex;
     }
-
-
-
-
-
-
 }

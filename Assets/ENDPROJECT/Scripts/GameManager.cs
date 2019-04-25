@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,11 +10,12 @@ public class GameManager : MonoBehaviour
     private GameObject[] dontDestroyObjects;
     private Scene gameScene;
     private GameObject questionHandlerObject;
-    public static GameManager Instance;   
+    public static GameManager Instance;
+    public List<int> questionOrder;
 
     void Start()
     {
-        
+
 
         if (Instance == null)
         {
@@ -27,11 +29,37 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void setOrder(int questionAmount)
+    {
+        for (int i = 0; i < questionAmount; i++)
+        {
+            questionOrder.Add(i);
+        }
+        for (int i = 0; i < questionOrder.Count; i++)
+        {
+            int temp = questionOrder[i];
+            int randomIndex = Random.Range(i, questionOrder.Count);
+            questionOrder[i] = questionOrder[randomIndex];
+            questionOrder[randomIndex] = temp;
+        }
+    }
+
+    public int getNextQuestionIndex()
+    {
+        print(questionOrder.First());
+        return questionOrder.First();
+    }
+
+    public void deletePlayedFromList(int playedQuestion)
+    {
+        questionOrder.Remove(playedQuestion);
+        print("Next to be found: " + questionOrder.First());
+    }
+
     public void passQuestion(int index)
     {
         gameScene = SceneManager.GetSceneByBuildIndex(2);
         SceneManager.LoadScene("GameScene");
-
         StartCoroutine(ABC(index));
     }
 
@@ -40,7 +68,7 @@ public class GameManager : MonoBehaviour
         yield return 0;
         questionHandlerObject = GameObject.Find("QuestionHandler");
         questionHandlerScript = questionHandlerObject.GetComponent<QuestionHandler>();
-        //questionHandlerScript = (QuestionHandler)FindObjectOfType(typeof(QuestionHandler));
+        deletePlayedFromList(index);
         switch (index)
         {
             case 2:
@@ -48,18 +76,15 @@ public class GameManager : MonoBehaviour
             case 6:
             case 8:
             case 9:
-                print(index);
                 questionHandlerScript.setMultipleChoice(index);
                 break;
             case 1:
             case 3:
             case 7:
-                print(index);
                 questionHandlerScript.setOpenQuestion(index);
                 break;
             case 5:
             case 0:
-                print(index);
                 questionHandlerScript.setAssignment(index);
                 break;
         }

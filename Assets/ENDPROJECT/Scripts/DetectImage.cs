@@ -14,7 +14,6 @@ Vuforia.ITrackableEventHandler
     private GameObject gameManagerObject;
     private GameManager gameManagerScript;
     private SceneSwitcher sceneSwitcherScript;
-
     private TrackableBehaviour mTrackableBehaviour;
     public static int st = 0;
 
@@ -27,9 +26,54 @@ Vuforia.ITrackableEventHandler
         gameManagerScript = gameManagerObject.GetComponent<GameManager>();
         sceneSwitcherScript = gameManagerObject.GetComponent<SceneSwitcher>();
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
+
+        setNextText();
         if (mTrackableBehaviour)
         {
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
+        }
+    }
+
+    public void setNextText()
+    {
+        int questionIndex = gameManagerScript.getNextQuestionIndex();
+
+        switch (questionIndex)
+        {
+            case 0:
+                gameManagerScript.deletePlayedFromList(0);
+                print("Deleted 0");
+                break;
+            case 1:
+                headerText.text = "Zoek Kirsten de kat!";
+                break;
+            case 2:
+                headerText.text = "Zoek Veerle de vlinder!";
+                break;
+            case 3:
+                headerText.text = "Zoek Hannah het hert";
+                break;
+            case 4:
+                headerText.text = "Zoek Corrie het konijn!";
+                break;
+            case 5:
+                headerText.text = "Zoek Bert de bij!";
+                break;
+            case 6:
+                headerText.text = "Zoek Peter het paard!";
+                break;
+            case 7:
+                headerText.text = "Zoek Emily de egel!";
+                break;
+            case 8:
+                headerText.text = "Zoek Victor de vos!";
+                break;
+            case 9:
+                headerText.text = "Zoek Henry de hond!";
+                break;
+            case 10:
+                headerText.text = "Zoek Evert de ezel!";
+                break;
         }
     }
 
@@ -53,13 +97,14 @@ Vuforia.ITrackableEventHandler
             TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
            
             print("Is Scanned: " + imageName);
-            if(imageName == gameManagerScript.getNextQuestionIndex())
+
+            if (imageName == gameManagerScript.getNextQuestionIndex())
             {
                 print("Good Scan!");
                 gameManagerScript.passQuestion(imageName);
                 sceneSwitcherScript.switchScene("GameScene");
             }
-            else 
+            else
             {
                 print("Wrong Scan!");
                 TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
@@ -70,18 +115,18 @@ Vuforia.ITrackableEventHandler
 
     public void TESTGoNextScene()
     {
-        int questionnumber = Random.Range(1, 10);
-        print("Is: " + questionnumber);
-        print("Should be: " + gameManagerScript.getNextQuestionIndex());
+        int questionnumber = gameManagerScript.getNextQuestionIndex();
         if (questionnumber == gameManagerScript.getNextQuestionIndex())
         {
-            print("Good Scan!");
+            print("Good Scan! " + questionnumber);
             gameManagerScript.passQuestion(questionnumber);
             sceneSwitcherScript.switchScene("GameScene");
         }
         else
         {
-            print("This is the wrong one!");
+            print("Wrong Scan!");
+            TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
+
         }
     }
 }

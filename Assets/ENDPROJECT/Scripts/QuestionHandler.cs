@@ -83,4 +83,12 @@ public class QuestionHandler : MonoBehaviour
             sceneSwitcher.oldElement(questionObject);
         }
     }
+
+    public void checkList()
+    {
+        if (gamemanagerScript.questionOrder.Count == 0)
+        {
+            sceneSwitcher.switchScene("EndScene");
+        }
+    }
 }

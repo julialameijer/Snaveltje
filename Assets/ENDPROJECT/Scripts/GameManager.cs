@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     public void setOrder(int questionAmount)
     {
-        for (int i = 0; i < questionAmount; i++)
+        for (int i = 0; i < questionAmount+ 1; i++)
         {
             questionOrder.Add(i);
         }
@@ -46,14 +46,14 @@ public class GameManager : MonoBehaviour
 
     public int getNextQuestionIndex()
     {
-        print(questionOrder.First());
         return questionOrder.First();
     }
+
+
 
     public void deletePlayedFromList(int playedQuestion)
     {
         questionOrder.Remove(playedQuestion);
-        print("Next to be found: " + questionOrder.First());
     }
 
     public void passQuestion(int index)
@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
             case 6:
             case 8:
             case 9:
+            case 10:
                 questionHandlerScript.setMultipleChoice(index);
                 break;
             case 1:
@@ -84,9 +85,9 @@ public class GameManager : MonoBehaviour
                 questionHandlerScript.setOpenQuestion(index);
                 break;
             case 5:
-            case 0:
                 questionHandlerScript.setAssignment(index);
                 break;
         }
     }
+
 }

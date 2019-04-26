@@ -168,11 +168,11 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135766170}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1616048493}
+  m_Father: {fileID: 1645440397}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -201,8 +201,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 207
+    m_Font: {fileID: 12800000, guid: 85b3e20a0c51b53499aa0f93e135875e, type: 3}
+    m_FontSize: 167
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -252,7 +252,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1641525172}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -280,7 +280,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 85b3e20a0c51b53499aa0f93e135875e, type: 3}
     m_FontSize: 152
     m_FontStyle: 0
     m_BestFit: 0
@@ -359,8 +359,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 150
+    m_Font: {fileID: 12800000, guid: 85b3e20a0c51b53499aa0f93e135875e, type: 3}
+    m_FontSize: 74
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -438,8 +438,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 80
+    m_Font: {fileID: 12800000, guid: 85b3e20a0c51b53499aa0f93e135875e, type: 3}
+    m_FontSize: 69
     m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 10
@@ -646,7 +646,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 85b3e20a0c51b53499aa0f93e135875e, type: 3}
     m_FontSize: 86
     m_FontStyle: 0
     m_BestFit: 0
@@ -1084,103 +1084,139 @@ MonoBehaviour:
   - isPlayed: 0
     question: Waarom blaft een hond?
   - isPlayed: 0
-    question: Waarom blaft een hond?
+    question: Wat eten we met Pasen?
   - isPlayed: 0
-    question: Waarom blaft een hond?
+    question: Wat staat er in de woonkamer met kerst?
   - isPlayed: 0
-    question: Waarom blaft een hond?
+    question: Welke kleur heeft het gras?
   - isPlayed: 0
-    question: Waarom blaft een hond?
+    question: Welke kleur heeft de lucht?
   - isPlayed: 0
-    question: Waarom blaft een hond?
+    question: Welk getal komt er na 256?
   - isPlayed: 0
-    question: Waarom blaft een hond?
+    question: Wat vallen er van de bomen in de herfst?
   - isPlayed: 0
-    question: Waarom blaft een hond?
+    question: Als je oranje wil krijgen, welke kleuren meng je dan?
   - isPlayed: 0
-    question: Waarom blaft een hond?
+    question: Wat is de hoofdstad van Nederland?
   - isPlayed: 0
-    question: Waarom blaft een hond?
+    question: Hoe heet de baby van een kat?
   multipleChoiceQuestions:
   - isPlayed: 0
-    question: Hoeveel is 3+3
-    rightAnswer: A
-    answerA: 6
-    answerB: 9
-    answerC: 10
+    question: Null
+    rightAnswer: Null
+    answerA: Null
+    answerB: Null
+    answerC: Null
   - isPlayed: 0
-    question: Hoeveel is 3+3
-    rightAnswer: A
-    answerA: 6
-    answerB: 9
-    answerC: 10
+    question: Welke kleur heeft een goudvis?
+    rightAnswer: B
+    answerA: Goud
+    answerB: Oranje
+    answerC: Paars
   - isPlayed: 0
-    question: Hoeveel is 3+3
-    rightAnswer: A
-    answerA: 6
-    answerB: 9
-    answerC: 10
+    question: Hoeveel gram is 1 kilogram?
+    rightAnswer: C
+    answerA: 100
+    answerB: 500
+    answerC: 1000
   - isPlayed: 0
-    question: Hoeveel is 3+3
+    question: Hoeveel is 4x4?
     rightAnswer: A
-    answerA: 6
-    answerB: 9
-    answerC: 10
+    answerA: 16
+    answerB: 8
+    answerC: 12
   - isPlayed: 0
-    question: Hoeveel is 3+3
+    question: Wanneer gebruik je een hoofdletter?
     rightAnswer: A
-    answerA: 6
-    answerB: 9
-    answerC: 10
+    answerA: Aan het begin van een naam
+    answerB: Altijd
+    answerC: Bij woorden die met 'het' beginnen
   - isPlayed: 0
-    question: Hoeveel is 3+3
-    rightAnswer: A
-    answerA: 6
-    answerB: 9
-    answerC: 10
+    question: Hoe heet de baby van een schaap?
+    rightAnswer: B
+    answerA: Babyschaap
+    answerB: Lammetje
+    answerC: Biggetje
   - isPlayed: 0
-    question: Hoeveel is 3+3
-    rightAnswer: A
-    answerA: 6
-    answerB: 9
-    answerC: 10
+    question: Hoe heet de baby van een paard?
+    rightAnswer: C
+    answerA: Babypaard
+    answerB: Lammetje
+    answerC: Veulentje
   - isPlayed: 0
-    question: Hoeveel is 3+3
-    rightAnswer: A
-    answerA: 6
-    answerB: 9
-    answerC: 10
+    question: Als je blauw en rood mixt, welke kleur krijg je dan?
+    rightAnswer: C
+    answerA: Groen
+    answerB: Oranje
+    answerC: Paars
   - isPlayed: 0
-    question: Hoeveel is 3+3
+    question: Welke kleuren krijgen de bladeren in de herfst?
     rightAnswer: A
-    answerA: 6
-    answerB: 9
-    answerC: 10
+    answerA: Rood/Oranje/Bruin
+    answerB: Groen/Blauw
+    answerC: Paars met gele stippen
   - isPlayed: 0
-    question: Hoeveel is 3+3
-    rightAnswer: A
-    answerA: 6
-    answerB: 9
-    answerC: 10
+    question: In welk seizoen is de kerstvakantie?
+    rightAnswer: B
+    answerA: Kerst
+    answerB: Winter
+    answerC: Zomer
   - isPlayed: 0
-    question: Hoeveel is 3+3
+    question: Welke kleur hebben zebra's?
     rightAnswer: A
-    answerA: 6
-    answerB: 9
-    answerC: 10
+    answerA: Zwart met wit
+    answerB: Blauw met geel
+    answerC: Bruin met oranje
+  - isPlayed: 0
+    question: Welke kleur hebben giraffes?
+    rightAnswer: B
+    answerA: Zwart met wit
+    answerB: Bruin met geel
+    answerC: Zwart met oranje
+  - isPlayed: 0
+    question: Hoeveel centimeter is 1 meter?
+    rightAnswer: C
+    answerA: 10
+    answerB: 1000
+    answerC: 100
+  - isPlayed: 0
+    question: Welke kleur is de tweede kleur van de regenboog?
+    rightAnswer: C
+    answerA: Rood
+    answerB: Geel
+    answerC: Oranje
+  - isPlayed: 0
+    question: Uit welk land komt pizza?
+    rightAnswer: B
+    answerA: Nederland
+    answerB: "Itali\xEB"
+    answerC: "Belgi\xEB"
+  - isPlayed: 0
+    question: Wie is het baasje van Samson?
+    rightAnswer: A
+    answerA: Gert
+    answerB: Bert
+    answerC: Snert
+  - isPlayed: 0
+    question: 'Maak de uitspraak af: Eerlijkheid duurt het ...?'
+    rightAnswer: C
+    answerA: Kortst
+    answerB: Hoogst
+    answerC: Langst
   assignments:
   - isPlayed: 0
-    assignment: Eet een snoepje
+    assignment: Maak een foto van een konijn.
+  - isPlayed: 0
+    assignment: Maak een foto van een konijn.
+  - isPlayed: 0
+    assignment: 
   - isPlayed: 0
     assignment: Eet een snoepje
   - isPlayed: 0
-    assignment: Eet een snoepje
+    assignment: Maak een foto van een dier!
   - isPlayed: 0
-    assignment: Eet een snoepje
-  - isPlayed: 0
-    assignment: Eet een snoepje
-  - isPlayed: 0
-    assignment: Eet een snoepje
+    assignment: Teken een vogeltje!
   - isPlayed: 0
     assignment: Eet een snoepje
   - isPlayed: 0
@@ -1192,7 +1228,7 @@ MonoBehaviour:
   - isPlayed: 0
     assignment: Eet een snoepje
   openQuestion: {fileID: 1675619593}
-  assignment: {fileID: 1705232927}
+  assignmentObject: {fileID: 1705232927}
   multipleChoiceQuestion: {fileID: 1045354796}
   questionObject: {fileID: 130102214}
   rightAnswer: {fileID: 1952502195}
@@ -1269,7 +1305,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 85b3e20a0c51b53499aa0f93e135875e, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
@@ -1552,7 +1588,7 @@ RectTransform:
   m_Children:
   - {fileID: 1645107477}
   m_Father: {fileID: 1641525172}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1659,80 +1695,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076848325}
-  m_CullTransparentMesh: 0
---- !u!1 &1079801584
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1079801585}
-  - component: {fileID: 1079801587}
-  - component: {fileID: 1079801586}
-  m_Layer: 5
-  m_Name: Panel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1079801585
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1079801584}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1641525172}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 25.300049, y: 19.700012}
-  m_SizeDelta: {x: 758.3, y: 645.4}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1079801586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1079801584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.6367924, g: 0.7403294, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &1079801587
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1079801584}
   m_CullTransparentMesh: 0
 --- !u!1 &1208482393
 GameObject:
@@ -1867,7 +1829,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 85b3e20a0c51b53499aa0f93e135875e, type: 3}
     m_FontSize: 107
     m_FontStyle: 0
     m_BestFit: 0
@@ -1946,12 +1908,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 73
+    m_Font: {fileID: 12800000, guid: 85b3e20a0c51b53499aa0f93e135875e, type: 3}
+    m_FontSize: 53
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 78
+    m_MaxSize: 53
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2154,8 +2116,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 86
+    m_Font: {fileID: 12800000, guid: 85b3e20a0c51b53499aa0f93e135875e, type: 3}
+    m_FontSize: 56
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -2233,12 +2195,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 73
+    m_Font: {fileID: 12800000, guid: 85b3e20a0c51b53499aa0f93e135875e, type: 3}
+    m_FontSize: 53
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 78
+    m_MaxSize: 53
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2253,106 +2215,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492600218}
-  m_CullTransparentMesh: 0
---- !u!1 &1616048492
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1616048493}
-  - component: {fileID: 1616048496}
-  - component: {fileID: 1616048495}
-  - component: {fileID: 1616048494}
-  m_Layer: 5
-  m_Name: Panel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1616048493
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616048492}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 135766171}
-  - {fileID: 1807680850}
-  m_Father: {fileID: 1645440397}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -36.6, y: 0}
-  m_SizeDelta: {x: -73.1, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1616048494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616048492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
---- !u!114 &1616048495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616048492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.6367924, g: 0.7403294, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &1616048496
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616048492}
   m_CullTransparentMesh: 0
 --- !u!1 &1638309371
 GameObject:
@@ -2466,7 +2328,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1079801585}
   - {fileID: 325247565}
   - {fileID: 1076848326}
   m_Father: {fileID: 730646642}
@@ -2595,7 +2456,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 85b3e20a0c51b53499aa0f93e135875e, type: 3}
     m_FontSize: 107
     m_FontStyle: 0
     m_BestFit: 0
@@ -2628,6 +2489,7 @@ GameObject:
   - component: {fileID: 1645440401}
   - component: {fileID: 1645440400}
   - component: {fileID: 1645440399}
+  - component: {fileID: 1645440398}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2646,7 +2508,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1616048493}
+  - {fileID: 135766171}
+  - {fileID: 1807680850}
   m_Father: {fileID: 1952502196}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2655,6 +2518,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1645440398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645440396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
 --- !u!114 &1645440399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2945,7 +2831,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1218159472}
-  m_Father: {fileID: 1616048493}
+  m_Father: {fileID: 1645440397}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -3385,12 +3271,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 73
+    m_Font: {fileID: 12800000, guid: 85b3e20a0c51b53499aa0f93e135875e, type: 3}
+    m_FontSize: 53
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 78
+    m_MaxSize: 53
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1

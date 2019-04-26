@@ -1,21 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
-using UnityEngine;
+using System.Diagnostics;
 using System.Linq;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     private QuestionHandler questionHandlerScript;
-    private GameObject[] dontDestroyObjects;
     private Scene gameScene;
     private GameObject questionHandlerObject;
+    private GameObject timeTextObject;
+    private GameObject scoreTextObject;
+    private GameObject bonusTextObject;
+    private Text timeText;
+    private Text scoretext;
+    private Text bonusText;
+    private int rightAnswered;
+
+
     public static GameManager Instance;
     public List<int> questionOrder;
+    public Stopwatch timer;
 
     void Start()
     {
-
+        timer = new Stopwatch();
 
         if (Instance == null)
         {
@@ -27,6 +38,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    public void rightAnswerPlus()
+    {
+        rightAnswered++;
     }
 
     public void setOrder(int questionAmount)
@@ -49,8 +65,55 @@ public class GameManager : MonoBehaviour
         return questionOrder.First();
     }
 
+    public void startTimer()
+    {
+        timer.Start();
+    }
 
 
+    public void stopTimer()
+    {
+        timer.Stop();
+    }
+
+
+    public void resultScreen()
+    {
+        int score;
+        int timePlayed;
+        int bonus;
+
+        bonus = rightAnswered;
+        timePlayed = timer.Elapsed.Seconds;
+        score = timePlayed - bonus;
+
+        timeTextObject = GameObject.Find("TimeText");
+        scoreTextObject = GameObject.Find("ScoreText");
+        bonusTextObject = GameObject.Find("BonusText");
+
+        timeText = timeTextObject.GetComponent<Text>();
+        timeText.text = timePlayed.ToString() + " Seconden";
+
+        bonusText = bonusTextObject.GetComponent<Text>();
+        bonusText.text = "Je verdiende bonus: " + bonus.ToString();
+
+        scoretext = scoreTextObject.GetComponent<Text>();
+        scoretext.text = "Je eindscore: " + score.ToString();
+    }
+
+    public void lastScene()
+    {
+        stopTimer();
+        SceneManager.LoadScene("EndScene");
+        StartCoroutine(MakeEndScene());
+    }
+
+    IEnumerator MakeEndScene()
+    {
+        yield return 0;
+        resultScreen();
+    }
+    
     public void deletePlayedFromList(int playedQuestion)
     {
         questionOrder.Remove(playedQuestion);

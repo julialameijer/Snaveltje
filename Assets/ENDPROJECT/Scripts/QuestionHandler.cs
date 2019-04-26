@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using System.Linq;
 
 public class QuestionHandler : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class QuestionHandler : MonoBehaviour
     private SceneSwitcher sceneSwitcher;
 
     private int index;
+    private int rightansweredquestions;
 
     [SerializeField] private Text questionText;
     [SerializeField] private Text A;
@@ -24,23 +26,22 @@ public class QuestionHandler : MonoBehaviour
     [SerializeField] private Assignment[] assignments;
 
     [SerializeField] private GameObject openQuestion;
-    [SerializeField] private GameObject assignment;
+    [SerializeField] private GameObject assignmentObject;
     [SerializeField] private GameObject multipleChoiceQuestion;
     [SerializeField] private GameObject questionObject;
     [SerializeField] private GameObject rightAnswer;
     [SerializeField] private GameObject wrongAnswer;
 
-    
+
 
     void Start()
     {
         gameManagerObject = GameObject.Find("GameManager");
         sceneSwitcherObject = GameObject.Find("Sceneswitcher");
         gamemanagerScript = gameManagerObject.GetComponent<GameManager>();
-        playerManager =   gameManagerObject.GetComponent<PlayerManager>();
+        playerManager = gameManagerObject.GetComponent<PlayerManager>();
         sceneSwitcher = sceneSwitcherObject.GetComponent<SceneSwitcher>();
     }
-
 
     public void setMultipleChoice(int index)
     {
@@ -67,6 +68,8 @@ public class QuestionHandler : MonoBehaviour
 
         Assignment assignment = assignments[index];
         questionText.text = assignment.assignment;
+        sceneSwitcher.newElement(assignmentObject);
+
     }
 
     public void checkMultipleChoice(string answer)
@@ -75,6 +78,7 @@ public class QuestionHandler : MonoBehaviour
         {
             sceneSwitcher.oldElement(questionObject);
             sceneSwitcher.newElement(rightAnswer);
+            gamemanagerScript.rightAnswerPlus();
         }
 
         else
@@ -86,9 +90,9 @@ public class QuestionHandler : MonoBehaviour
 
     public void checkList()
     {
-        if (gamemanagerScript.questionOrder.Count == 0)
+        if (gamemanagerScript.questionOrder.Count == 0 || gamemanagerScript.questionOrder.First() == 0 && gamemanagerScript.questionOrder.Count == 1)
         {
-            sceneSwitcher.switchScene("EndScene");
+            gamemanagerScript.lastScene();
         }
     }
 }

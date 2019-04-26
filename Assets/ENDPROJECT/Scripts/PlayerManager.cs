@@ -9,8 +9,6 @@ public class PlayerManager : MonoBehaviour
     private InputField nameInput;
     [SerializeField]
     private InputField codeInput;
-
-
     private Player player;
     private List<Player> players;
     

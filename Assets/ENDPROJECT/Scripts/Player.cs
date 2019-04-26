@@ -8,15 +8,12 @@ public class Player
     private string name;
     private int ID;
     private int currentPlayingQuestion;
-    private List<int> playedQuestions;
-    private List<int> toPlayQuestions;
+    private int playedTime;
+
 
     void Start()
     {
-        for(int i = 0; i  < 10; i++)
-        {
-            toPlayQuestions.Add(i);
-        }
+
     }
 
     public void setName(InputField name)
@@ -27,11 +24,6 @@ public class Player
     public void setID(int id)
     {
         this.ID = id;
-    }
-
-    public List<int> getToPlayQuestions()
-    {
-        return toPlayQuestions.Except(playedQuestions).ToList();
     }
 
     public int getCurrentPlayingQuestion()

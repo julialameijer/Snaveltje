@@ -96,17 +96,14 @@ Vuforia.ITrackableEventHandler
             int imageName = int.Parse(mTrackableBehaviour.Trackable.Name);
             TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
            
-            print("Is Scanned: " + imageName);
 
             if (imageName == gameManagerScript.getNextQuestionIndex())
             {
-                print("Good Scan!");
                 gameManagerScript.passQuestion(imageName);
                 sceneSwitcherScript.switchScene("GameScene");
             }
             else
             {
-                print("Wrong Scan!");
                 TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
 
             }

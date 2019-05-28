@@ -1,5 +1,4 @@
-﻿
-[System.Serializable]
+﻿[System.Serializable]
 public class OpenQuestion
 {
     public bool isPlayed;

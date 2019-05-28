@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -21,7 +22,23 @@ public class PlayerManager : MonoBehaviour
     {
         player = new Player();
         players.Add(player);
-        player.setID(players.IndexOf(player));
+        player.setGamePin(codeInput);
         player.setName(nameInput);
+    }
+
+    public void callPlayerPush()
+    {
+        StartCoroutine(pushPlayer());
+        print("Coroutine started.");
+    }
+
+    IEnumerator pushPlayer()
+    {
+        WWWForm wwwForm = new WWWForm();
+        wwwForm.AddField("username", nameInput.text);
+        wwwForm.AddField("gamepin", int.Parse(codeInput.text));
+        UnityWebRequest www = UnityWebRequest.Post("http://172.16.100.29/Snaveltje/player.php", wwwForm);
+        yield return www.SendWebRequest();
+        print(www.downloadHandler.text);    
     }
 }

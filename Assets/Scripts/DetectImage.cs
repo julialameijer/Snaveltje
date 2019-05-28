@@ -37,7 +37,6 @@ Vuforia.ITrackableEventHandler
     public void setNextText()
     {
         int questionIndex = gameManagerScript.getNextQuestionIndex();
-
         switch (questionIndex)
         {
             case 0:

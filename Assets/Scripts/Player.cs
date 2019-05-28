@@ -6,10 +6,10 @@ using System.Linq;
 public class Player
 {
     private string name;
-    private int ID;
     private int currentPlayingQuestion;
     private int playedTime;
-
+    private int gamePin;
+    
 
     void Start()
     {
@@ -21,10 +21,6 @@ public class Player
         this.name = name.text;
     }
     
-    public void setID(int id)
-    {
-        this.ID = id;
-    }
 
     public int getCurrentPlayingQuestion()
     {
@@ -34,5 +30,10 @@ public class Player
     public void setCurrentPlayingQuestion(int questionIndex)
     {
         currentPlayingQuestion = questionIndex;
+    }
+
+    public void setGamePin(InputField gamepin)
+    {
+        this.gamePin = int.Parse(gamepin.text);
     }
 }

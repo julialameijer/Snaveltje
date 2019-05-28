@@ -21,9 +21,23 @@ public class QuestionHandler : MonoBehaviour
     [SerializeField] private Text A;
     [SerializeField] private Text B;
     [SerializeField] private Text C;
-    [SerializeField] private OpenQuestion[] openQuestions;
-    [SerializeField] private Question[] multipleChoiceQuestions;
     [SerializeField] private Assignment[] assignments;
+
+
+    [SerializeField] private OpenQuestion[] biologyQuestions;
+    [SerializeField] private Question[] biologymMultipleChoiceQuestions;
+
+    [SerializeField] private OpenQuestion[] gameQuestions;
+    [SerializeField] private Question[] gameMultipleChoiceQuestions;
+
+    [SerializeField] private OpenQuestion[] historyQuestions;
+    [SerializeField] private Question[] historyMultipleChoiceQuestions;
+
+    [SerializeField] private OpenQuestion[] englishQuestions;
+    [SerializeField] private Question[] englishMultipleChoiceQuestions;
+
+    [SerializeField] private OpenQuestion[] arithmeticQuestions;
+    [SerializeField] private Question[] arithmeticMultipleChoiceQuestions;
 
     [SerializeField] private GameObject openQuestion;
     [SerializeField] private GameObject assignmentObject;
@@ -46,7 +60,7 @@ public class QuestionHandler : MonoBehaviour
     public void setMultipleChoice(int index)
     {
         this.index = index;
-        Question question = multipleChoiceQuestions[index];
+        Question question = englishMultipleChoiceQuestions[index];
         questionText.text = question.question;
         sceneSwitcher.newElement(multipleChoiceQuestion);
         A.text = question.answerA;
@@ -57,7 +71,7 @@ public class QuestionHandler : MonoBehaviour
     public void setOpenQuestion(int index)
     {
         this.index = index;
-        OpenQuestion question = openQuestions[index];
+        OpenQuestion question = englishQuestions[index];
         questionText.text = question.question;
         sceneSwitcher.newElement(openQuestion);
     }
@@ -74,7 +88,7 @@ public class QuestionHandler : MonoBehaviour
 
     public void checkMultipleChoice(string answer)
     {
-        if(answer == multipleChoiceQuestions[index].rightAnswer)
+        if(answer == englishMultipleChoiceQuestions[index].rightAnswer)
         {
             sceneSwitcher.oldElement(questionObject);
             sceneSwitcher.newElement(rightAnswer);

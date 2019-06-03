@@ -1036,11 +1036,11 @@ MonoBehaviour:
     answerB: 24
     answerC: 32
   - isPlayed: 0
-    question: Wie mag er beginnen met schaken?
-    rightAnswer: A
+    question: Wie wint er volgens de uitspraak met schaken?
+    rightAnswer: B
     answerA: Wit
     answerB: 'Zwart '
-    answerC: De jongste
+    answerC: De oudste
   - isPlayed: 0
     question: "Uit welke regio komen generatie 1 Pok\xE9mons vandaan?"
     rightAnswer: C
@@ -1059,6 +1059,18 @@ MonoBehaviour:
     answerA: Simulatie
     answerB: Schietspel
     answerC: Muntjes zoeken
+  - isPlayed: 0
+    question: Welke kleur heeft in de normale monopoly de goedkoopste straat?
+    rightAnswer: A
+    answerA: Bruin
+    answerB: Blauw
+    answerC: Groen
+  - isPlayed: 0
+    question: Waar moet je tegenaan rijden bij Rocket League?
+    rightAnswer: C
+    answerA: Een pijltje
+    answerB: Een geweer
+    answerC: Een bal
   historyQuestions:
   - isPlayed: 0
     question: 0

@@ -37,7 +37,7 @@ public class PlayerManager : MonoBehaviour
         WWWForm wwwForm = new WWWForm();
         wwwForm.AddField("username", nameInput.text);
         wwwForm.AddField("gamepin", int.Parse(codeInput.text));
-        UnityWebRequest www = UnityWebRequest.Post("http://172.16.100.29/Snaveltje/player.php", wwwForm);
+        UnityWebRequest www = UnityWebRequest.Post("http://192.168.178.10/Snaveltje/player.php", wwwForm);
         yield return www.SendWebRequest();
         print(www.downloadHandler.text);    
     }

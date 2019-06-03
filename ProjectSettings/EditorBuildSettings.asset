@@ -6,24 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ENDPROJECT/PlayerScenes/PlayerMenu.unity
+    path: Assets/PlayerScenes/PlayerMenu.unity
     guid: 426e713bfd273404aabbc2c84c97a2fd
   - enabled: 1
-    path: Assets/ENDPROJECT/PlayerScenes/ScannerScene.unity
+    path: Assets/PlayerScenes/Storyline.unity
+    guid: ee10791a0f57fea4182ddf546e816afd
+  - enabled: 1
+    path: Assets/PlayerScenes/ScannerScene.unity
     guid: 189bf8e68ad07c84eac694615cef20f3
   - enabled: 1
-    path: Assets/ENDPROJECT/PlayerScenes/GameScene.unity
+    path: Assets/PlayerScenes/GameScene.unity
     guid: c59bd1f65f197f944b52916490e4a0c5
   - enabled: 1
-    path: Assets/ENDPROJECT/PlayerScenes/EndScene.unity
+    path: Assets/PlayerScenes/EndScene.unity
     guid: 088f1fa33e35b294e986784c306e0ee7
-  - enabled: 0
-    path: Assets/Scenes/TestPurposes/MergedMenu.unity
-    guid: 38ce2516c3eeb1644a8858c61ed09a96
-  - enabled: 0
-    path: Assets/Scenes/EndProjectPurposes/Player/Questions/MultipleChoice.unity
-    guid: 32f25f63fa47ae447a73f7fc3592b2bf
-  - enabled: 0
-    path: Assets/Scenes/EndProjectPurposes/Player/Questions/OpenQuestion.unity
-    guid: c66de4e5e6bc00842a9e26fd931e7b33
+  - enabled: 1
+    path: Assets/HostScenes/HostMenu.unity
+    guid: 7eb2559b11c5ef046a793258ef453501
   m_configObjects: {}

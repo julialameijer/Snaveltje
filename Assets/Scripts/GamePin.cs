@@ -37,7 +37,7 @@ public class GamePin : MonoBehaviour
         WWWForm wwwForm = new WWWForm();
         wwwForm.AddField("gamepin", gamePin);
 
-        UnityWebRequest www = UnityWebRequest.Post("http://172.16.100.29/Snaveltje/gamepin.php", wwwForm);
+        UnityWebRequest www = UnityWebRequest.Post("http://192.168.178.10/Snaveltje/gamepin.php", wwwForm);
         yield return www.SendWebRequest();  
         print(www.downloadHandler.text);
     }
@@ -48,17 +48,21 @@ public class GamePin : MonoBehaviour
         int toBeChecked = int.Parse(gamePinInput.text);
         print("To be checked: " + toBeChecked);
         wwwForm.AddField("gamepin", toBeChecked);
-        UnityWebRequest www = UnityWebRequest.Post("http://172.16.100.29/Snaveltje/gamepinLogin.php", wwwForm);
+        UnityWebRequest www = UnityWebRequest.Post("http://192.168.178.10/Snaveltje/gamepinLogin.php", wwwForm);
         yield return www.SendWebRequest();
-        
+
+        print(www.downloadHandler.text);
+
         if(www.downloadHandler.text == "1")
         {
+            print("Text is 1");
             //GameObject.Find("Player2").SetActive(false);
             player3.SetActive(true);
         }
 
-        if (www.downloadHandler.text == "0")
+        else if(www.downloadHandler.text == "0" || www.downloadHandler.text == null)
         {
+            print("Text is 0");
             wrongText.gameObject.SetActive(true);
         }
 
@@ -99,7 +103,7 @@ public class GamePin : MonoBehaviour
     {
         WWWForm wwwForm = new WWWForm();
         wwwForm.AddField("gamepin", gamePin);
-        UnityWebRequest www = UnityWebRequest.Post("http://172.16.100.23/Snaveltje/removeFromDB.php", wwwForm);
+        UnityWebRequest www = UnityWebRequest.Post("http://192.168.178.10/Snaveltje/removeFromDB.php", wwwForm);
         yield return www.SendWebRequest();
         print("Deleted info: " + www.downloadHandler.text);
     }

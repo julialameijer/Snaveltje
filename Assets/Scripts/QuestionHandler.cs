@@ -55,9 +55,8 @@ public class QuestionHandler : MonoBehaviour
 
     public void setMultipleChoice(int index)
     {
-        print("setMultipleChoice");
         this.index = index;
-        Question question = englishMultipleChoiceQuestions[index];
+        Question question = gameMultipleChoiceQuestions[index];
         questionText.text = question.question;
         sceneSwitcher.newElement(multipleChoiceQuestion);
         A.text = question.answerA;
@@ -85,7 +84,7 @@ public class QuestionHandler : MonoBehaviour
 
     public void checkMultipleChoice(string answer)
     {
-        if(answer == englishMultipleChoiceQuestions[index].rightAnswer)
+        if(answer == gameMultipleChoiceQuestions[index].rightAnswer)
         {
             sceneSwitcher.oldElement(multipleChoiceQuestion);
             sceneSwitcher.newElement(rightAnswer);

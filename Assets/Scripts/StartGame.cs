@@ -20,7 +20,7 @@ public class StartGame : MonoBehaviour
         WWWForm wwwForm = new WWWForm();
         wwwForm.AddField("gamepin", gamepin.getGamepin());
 
-        UnityWebRequest www = UnityWebRequest.Post("http://172.16.100.29/Snaveltje/startGame.php", wwwForm);
+        UnityWebRequest www = UnityWebRequest.Post("http://192.168.178.10/Snaveltje/startGame.php", wwwForm);
         yield return www.SendWebRequest();
         print(www.downloadHandler.text);
     }

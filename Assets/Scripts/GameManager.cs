@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     private Text scoretext;
     private Text bonusText;
     [SerializeField] private Text updateTimeText;
+    [SerializeField] private GamePin gamepin;
     private int rightAnswered;
 
 
@@ -27,6 +29,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+
+        
         timer = new Stopwatch();
 
         if (Instance == null)
@@ -156,10 +160,33 @@ public class GameManager : MonoBehaviour
                 break;
             case 1:
             case 3:
-                questionHandlerScript.setOpenQuestion(index);
+                //questionHandlerScript.setOpenQuestion(index);
+                questionHandlerScript.setMultipleChoice(index);
                 break;
 
         }
     }
 
+    public void startInvokeRepeat()
+    {
+        InvokeRepeating("checkStart",0.0f, 0.5f);
+
+    }
+
+    private void checkStart()
+    {
+        StartCoroutine(Check());
+        print("hey");
+    }
+
+    private IEnumerator Check()
+    {
+        
+        WWWForm wwwForm = new WWWForm();
+        wwwForm.AddField("gamepin", gamepin.getGamepin());
+        UnityWebRequest www = UnityWebRequest.Post("http://192.168.178.10/Snaveltje/checkStart.php", wwwForm);
+        yield return www.SendWebRequest();
+        print("i was doing dus fine before i met you");
+        print(www.downloadHandler.text);
+    }
 }

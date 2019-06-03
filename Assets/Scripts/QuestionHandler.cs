@@ -16,13 +16,11 @@ public class QuestionHandler : MonoBehaviour
 
     private int index;
     private int rightansweredquestions;
-
+    
     [SerializeField] private Text questionText;
     [SerializeField] private Text A;
     [SerializeField] private Text B;
     [SerializeField] private Text C;
-    [SerializeField] private Assignment[] assignments;
-
 
     [SerializeField] private OpenQuestion[] biologyQuestions;
     [SerializeField] private Question[] biologymMultipleChoiceQuestions;
@@ -40,9 +38,7 @@ public class QuestionHandler : MonoBehaviour
     [SerializeField] private Question[] arithmeticMultipleChoiceQuestions;
 
     [SerializeField] private GameObject openQuestion;
-    [SerializeField] private GameObject assignmentObject;
     [SerializeField] private GameObject multipleChoiceQuestion;
-    [SerializeField] private GameObject questionObject;
     [SerializeField] private GameObject rightAnswer;
     [SerializeField] private GameObject wrongAnswer;
 
@@ -59,6 +55,7 @@ public class QuestionHandler : MonoBehaviour
 
     public void setMultipleChoice(int index)
     {
+        print("setMultipleChoice");
         this.index = index;
         Question question = englishMultipleChoiceQuestions[index];
         questionText.text = question.question;
@@ -76,7 +73,7 @@ public class QuestionHandler : MonoBehaviour
         sceneSwitcher.newElement(openQuestion);
     }
 
-    public void setAssignment(int index)
+ /*   public void setAssignment(int index)
     {
         this.index = index;
 
@@ -84,13 +81,13 @@ public class QuestionHandler : MonoBehaviour
         questionText.text = assignment.assignment;
         sceneSwitcher.newElement(assignmentObject);
 
-    }
+    }*/
 
     public void checkMultipleChoice(string answer)
     {
         if(answer == englishMultipleChoiceQuestions[index].rightAnswer)
         {
-            sceneSwitcher.oldElement(questionObject);
+            sceneSwitcher.oldElement(multipleChoiceQuestion);
             sceneSwitcher.newElement(rightAnswer);
             gamemanagerScript.rightAnswerPlus();
         }
@@ -98,7 +95,7 @@ public class QuestionHandler : MonoBehaviour
         else
         {
             sceneSwitcher.newElement(wrongAnswer);
-            sceneSwitcher.oldElement(questionObject);
+            sceneSwitcher.oldElement(multipleChoiceQuestion);
         }
     }
 

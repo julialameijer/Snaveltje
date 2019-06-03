@@ -9,9 +9,12 @@ public class GamePin : MonoBehaviour
 
     [SerializeField] private InputField gamePinInput;
     [SerializeField] private InputField nameInput;
-    [SerializeField] private Button submitButton;
+    [SerializeField] private Button gamepinSubmit;
+    [SerializeField] private Button nameSubmit;
     [SerializeField] private Button createButton;
     [SerializeField] private Button startGame;
+    [SerializeField] private GameObject host;
+    [SerializeField] private GameObject host1;
     [SerializeField] private Text wrongText;
     [SerializeField] private Text gamepinText;
     [SerializeField] private GameObject player3;
@@ -24,6 +27,9 @@ public class GamePin : MonoBehaviour
     {
         //sceneSwitcher = GameObject.Find("GameManager").GetComponent<SceneSwitcher>();
         isCreated = false;
+        //if(mnhoofd == ugly){
+        //iwannadii =true;
+        //)
     }
 
     IEnumerator pushGamePin()
@@ -47,7 +53,7 @@ public class GamePin : MonoBehaviour
         
         if(www.downloadHandler.text == "1")
         {
-            GameObject.Find("Player2").SetActive(false);
+            //GameObject.Find("Player2").SetActive(false);
             player3.SetActive(true);
         }
 
@@ -69,9 +75,8 @@ public class GamePin : MonoBehaviour
         //gamePin = 1;
         print(gamePin);
         StartCoroutine(pushGamePin());
-        gamepinText.gameObject.SetActive(true);
-        createButton.gameObject.SetActive(false);
-        startGame.gameObject.SetActive(true);
+        host.SetActive(false);
+        host1.SetActive(true);
         gamepinText.text = gamePin.ToString();
         isCreated = true;
     }
@@ -80,7 +85,8 @@ public class GamePin : MonoBehaviour
     {
         if(gamePinInput.text.Length > 0 || nameInput.text.Length > 0)
         {
-            submitButton.interactable = true;
+            gamepinSubmit.interactable = true;
+            nameSubmit.interactable = true;
         }
     }
 
@@ -96,5 +102,10 @@ public class GamePin : MonoBehaviour
         UnityWebRequest www = UnityWebRequest.Post("http://172.16.100.23/Snaveltje/removeFromDB.php", wwwForm);
         yield return www.SendWebRequest();
         print("Deleted info: " + www.downloadHandler.text);
+    }
+
+    public int getGamepin()
+    {
+        return gamePin;
     }
 }

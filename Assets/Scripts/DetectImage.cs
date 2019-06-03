@@ -9,13 +9,17 @@ using Debug = UnityEngine.Debug;
 public class DetectImage : MonoBehaviour,
 Vuforia.ITrackableEventHandler
 {
-    [SerializeField]
-    private Text headerText;
+    [SerializeField] private Text headerText;
+    [SerializeField] private GameObject goodScan;
+    [SerializeField] private GameObject wrongScan;
+
+
     private GameObject gameManagerObject;
     private GameManager gameManagerScript;
     private SceneSwitcher sceneSwitcherScript;
     private TrackableBehaviour mTrackableBehaviour;
     public static int st = 0;
+    private int imageName;
 
     void Start()
     {
@@ -92,21 +96,34 @@ Vuforia.ITrackableEventHandler
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
             st = 1;
-            int imageName = int.Parse(mTrackableBehaviour.Trackable.Name);
+            imageName = int.Parse(mTrackableBehaviour.Trackable.Name);
             TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
            
 
             if (imageName == gameManagerScript.getNextQuestionIndex())
             {
-                gameManagerScript.passQuestion(imageName);
-                sceneSwitcherScript.switchScene("GameScene");
+                goodScan.SetActive(true);
+
             }
             else
             {
-                TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
-
+                wrongScan.SetActive(true);
+                
             }
         }
+    }
+
+    public void GoodScan()
+    {
+        goodScan.SetActive(false);
+        gameManagerScript.passQuestion(imageName);
+        sceneSwitcherScript.switchScene("GameScene");
+    }
+
+    public void WrongScan()
+    {
+        wrongScan.SetActive(false);
+        TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
     }
 
     public void TESTGoNextScene()
@@ -116,7 +133,7 @@ Vuforia.ITrackableEventHandler
         {
             print("Good Scan! " + questionnumber);
             gameManagerScript.passQuestion(questionnumber);
-            sceneSwitcherScript.switchScene("GameScene");
+            //sceneSwitcherScript.switchScene("GameScene");
         }
         else
         {

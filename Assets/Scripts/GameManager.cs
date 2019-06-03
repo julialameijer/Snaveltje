@@ -129,13 +129,15 @@ public class GameManager : MonoBehaviour
 
     public void passQuestion(int index)
     {
-        gameScene = SceneManager.GetSceneByBuildIndex(2);
+        //gameScene = SceneManager.GetSceneByBuildIndex(2);
         SceneManager.LoadScene("GameScene");
+        print("passquestion");
         StartCoroutine(ABC(index));
     }
 
     IEnumerator ABC(int index)
     {
+        print("ABC");
         yield return 0;
         questionHandlerObject = GameObject.Find("QuestionHandler");
         questionHandlerScript = questionHandlerObject.GetComponent<QuestionHandler>();
@@ -144,6 +146,8 @@ public class GameManager : MonoBehaviour
         {
             case 2:
             case 4:
+            case 5:
+            case 7:
             case 6:
             case 8:
             case 9:
@@ -152,12 +156,9 @@ public class GameManager : MonoBehaviour
                 break;
             case 1:
             case 3:
-            case 7:
                 questionHandlerScript.setOpenQuestion(index);
                 break;
-            case 5:
-                questionHandlerScript.setAssignment(index);
-                break;
+
         }
     }
 

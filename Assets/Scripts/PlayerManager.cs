@@ -29,7 +29,6 @@ public class PlayerManager : MonoBehaviour
     public void callPlayerPush()
     {
         StartCoroutine(pushPlayer());
-        print("Coroutine started.");
     }
 
     IEnumerator pushPlayer()
@@ -37,7 +36,7 @@ public class PlayerManager : MonoBehaviour
         WWWForm wwwForm = new WWWForm();
         wwwForm.AddField("username", nameInput.text);
         wwwForm.AddField("gamepin", int.Parse(codeInput.text));
-        UnityWebRequest www = UnityWebRequest.Post("http://192.168.178.10/Snaveltje/player.php", wwwForm);
+        UnityWebRequest www = UnityWebRequest.Post("https://snaveltje.wildsea.nl/player.php", wwwForm);
         yield return www.SendWebRequest();
         print(www.downloadHandler.text);    
     }

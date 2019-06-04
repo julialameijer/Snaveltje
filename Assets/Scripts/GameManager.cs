@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        timer.Elapsed.Seconds.ToString();
         updateTimeText.text = timer.Elapsed.TotalSeconds.ToString();
     }
 
@@ -90,14 +91,16 @@ public class GameManager : MonoBehaviour
     public void resultScreen()
     {
         double score;
-        double timePlayed;
+        float timePlayed;
         double bonus;
+        double finalscore;
 
-       
-        bonus = rightAnswered;
-        //timePlayed = timer.Elapsed.TotalSeconds;
-        timePlayed = (float)timer.Elapsed.TotalSeconds;
-        score = timePlayed - bonus;
+        bonus = rightAnswered * 32;
+        timePlayed = Mathf.Round((float)timer.Elapsed.TotalSeconds);
+
+        //timePlayed = (float)timer.Elapsed.TotalSeconds;
+        score = timePlayed * 50;
+        finalscore = score - bonus;
 
         timeTextObject = GameObject.Find("TimeText");
         scoreTextObject = GameObject.Find("ScoreText");
@@ -141,7 +144,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator ABC(int index)
     {
-        print("ABC");
         yield return 0;
         questionHandlerObject = GameObject.Find("QuestionHandler");
         questionHandlerScript = questionHandlerObject.GetComponent<QuestionHandler>();
@@ -176,17 +178,27 @@ public class GameManager : MonoBehaviour
     private void checkStart()
     {
         StartCoroutine(Check());
-        print("hey");
     }
 
     private IEnumerator Check()
-    {
-        
-        WWWForm wwwForm = new WWWForm();
+    {        
+        WWWForm wwwForm = new WWWForm();        
         wwwForm.AddField("gamepin", gamepin.getGamepin());
-        UnityWebRequest www = UnityWebRequest.Post("http://192.168.178.10/Snaveltje/checkStart.php", wwwForm);
+        UnityWebRequest www = UnityWebRequest.Post("https://snaveltje.wildsea.nl/checkStart.php", wwwForm);
         yield return www.SendWebRequest();
-        print("i was doing dus fine before i met you");
-        print(www.downloadHandler.text);
+
+
+        if(www.downloadHandler.text == "1")
+        {
+            startGame();
+        }
+    }
+
+    public void startGame()
+    {
+        StopCoroutine(Check());
+        CancelInvoke();
+        SceneManager.LoadScene("ScannerScene");
+        startTimer();
     }
 }

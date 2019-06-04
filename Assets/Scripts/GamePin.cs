@@ -20,8 +20,8 @@ public class GamePin : MonoBehaviour
     [SerializeField] private GameObject player3;
                      private SceneSwitcher sceneSwitcher;
                      private int gamePin;
-                     private bool isCreated;    
-    
+                     private bool isCreated;
+    private int toBeChecked;
 
     void Start()
     {
@@ -37,7 +37,7 @@ public class GamePin : MonoBehaviour
         WWWForm wwwForm = new WWWForm();
         wwwForm.AddField("gamepin", gamePin);
 
-        UnityWebRequest www = UnityWebRequest.Post("http://192.168.178.10/Snaveltje/gamepin.php", wwwForm);
+        UnityWebRequest www = UnityWebRequest.Post("https://snaveltje.wildsea.nl/gamepin.php", wwwForm);
         yield return www.SendWebRequest();  
         print(www.downloadHandler.text);
     }
@@ -45,10 +45,10 @@ public class GamePin : MonoBehaviour
     IEnumerator checkGamePin()
     {
         WWWForm wwwForm = new WWWForm();
-        int toBeChecked = int.Parse(gamePinInput.text);
+        toBeChecked = int.Parse(gamePinInput.text);
         print("To be checked: " + toBeChecked);
         wwwForm.AddField("gamepin", toBeChecked);
-        UnityWebRequest www = UnityWebRequest.Post("http://192.168.178.10/Snaveltje/gamepinLogin.php", wwwForm);
+        UnityWebRequest www = UnityWebRequest.Post("https://snaveltje.wildsea.nl/gamepinLogin.php", wwwForm);
         yield return www.SendWebRequest();
 
         print(www.downloadHandler.text);
@@ -103,13 +103,13 @@ public class GamePin : MonoBehaviour
     {
         WWWForm wwwForm = new WWWForm();
         wwwForm.AddField("gamepin", gamePin);
-        UnityWebRequest www = UnityWebRequest.Post("http://192.168.178.10/Snaveltje/removeFromDB.php", wwwForm);
+        UnityWebRequest www = UnityWebRequest.Post("https://snaveltje.wildsea.nl/removeFromDB.php", wwwForm);
         yield return www.SendWebRequest();
         print("Deleted info: " + www.downloadHandler.text);
     }
 
     public int getGamepin()
     {
-        return gamePin;
+        return toBeChecked;
     }
 }

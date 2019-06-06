@@ -97,9 +97,9 @@ Vuforia.ITrackableEventHandler
         {
             st = 1;
             imageName = int.Parse(mTrackableBehaviour.Trackable.Name);
+            print(imageName);
             TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
            
-
             if (imageName == gameManagerScript.getNextQuestionIndex())
             {
                 goodScan.SetActive(true);
@@ -108,15 +108,16 @@ Vuforia.ITrackableEventHandler
             else
             {
                 wrongScan.SetActive(true);
-                
             }
         }
     }
 
     public void GoodScan()
     {
-        goodScan.SetActive(false);
         gameManagerScript.passQuestion(imageName);
+        print("Imagename: " + imageName);
+
+        
         sceneSwitcherScript.switchScene("GameScene");
     }
 
@@ -133,7 +134,7 @@ Vuforia.ITrackableEventHandler
         {
             print("Good Scan! " + questionnumber);
             gameManagerScript.passQuestion(questionnumber);
-            //sceneSwitcherScript.switchScene("GameScene");
+            //sceneSwitcherScript.switchScene("GameScene");   
         }
         else
         {

@@ -108,8 +108,13 @@ public class GamePin : MonoBehaviour
         print("Deleted info: " + www.downloadHandler.text);
     }
 
-    public int getGamepin()
+    public int getInputGamepin()
     {
         return toBeChecked;
+    }
+
+    public int getCurrentGamepin()
+    {
+        return gamePin;
     }
 }

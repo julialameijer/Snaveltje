@@ -56,6 +56,7 @@ public class QuestionHandler : MonoBehaviour
     public void setMultipleChoice(int index)
     {
         this.index = index;
+        print("setmultiplechoice"); 
         Question question = gameMultipleChoiceQuestions[index];
         questionText.text = question.question;
         sceneSwitcher.newElement(multipleChoiceQuestion);

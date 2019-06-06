@@ -28,9 +28,7 @@ public class GameManager : MonoBehaviour
     public Stopwatch timer;
 
     void Start()
-    {
-
-        
+    {  
         timer = new Stopwatch();
 
         if (Instance == null)
@@ -42,7 +40,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 
     void Update()
@@ -136,6 +133,7 @@ public class GameManager : MonoBehaviour
 
     public void passQuestion(int index)
     {
+        print("In passquestion " + index);
         //gameScene = SceneManager.GetSceneByBuildIndex(2);
         SceneManager.LoadScene("GameScene");
         print("passquestion");
@@ -145,8 +143,10 @@ public class GameManager : MonoBehaviour
     IEnumerator ABC(int index)
     {
         yield return 0;
+        print("in IEnumerator " + index);
         questionHandlerObject = GameObject.Find("QuestionHandler");
         questionHandlerScript = questionHandlerObject.GetComponent<QuestionHandler>();
+        print(questionHandlerObject);
         deletePlayedFromList(index);
         switch (index)
         {
@@ -183,7 +183,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator Check()
     {        
         WWWForm wwwForm = new WWWForm();        
-        wwwForm.AddField("gamepin", gamepin.getGamepin());
+        wwwForm.AddField("gamepin", gamepin.getInputGamepin());
         UnityWebRequest www = UnityWebRequest.Post("https://snaveltje.wildsea.nl/checkStart.php", wwwForm);
         yield return www.SendWebRequest();
 

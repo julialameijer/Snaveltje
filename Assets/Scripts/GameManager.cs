@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     private Text bonusText;
     [SerializeField] private Text updateTimeText;
     [SerializeField] private GamePin gamepin;
-    private int rightAnswered;
+    public int rightAnswered;
 
 
     public static GameManager Instance;
@@ -197,8 +197,10 @@ public class GameManager : MonoBehaviour
     public void startGame()
     {
         StopCoroutine(Check());
-        CancelInvoke();
+        CancelInvoke("checkStart");
         SceneManager.LoadScene("ScannerScene");
         startTimer();
     }
+
+
 }

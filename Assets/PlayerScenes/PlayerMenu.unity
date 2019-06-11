@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1923,6 +1923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameInput: {fileID: 674902396}
   codeInput: {fileID: 2075742755}
+  gameManager: {fileID: 1511392726}
 --- !u!114 &1511392726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1937,6 +1938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateTimeText: {fileID: 1437904953}
   gamepin: {fileID: 1799165586}
+  rightAnswered: 0
   questionOrder: 
 --- !u!114 &1511392727
 MonoBehaviour:

@@ -9,6 +9,7 @@ public class Player
     private int currentPlayingQuestion;
     private int playedTime;
     private int gamePin;
+    private int score;
     
 
     void Start()
@@ -20,7 +21,6 @@ public class Player
     {
         this.name = name.text;
     }
-    
 
     public int getCurrentPlayingQuestion()
     {
@@ -35,5 +35,15 @@ public class Player
     public void setGamePin(InputField gamepin)
     {
         this.gamePin = int.Parse(gamepin.text);
+    }
+
+    public int getScore()
+    {
+        return 0;
+    }
+
+    public int getGamepin()
+    {
+        return gamePin;
     }
 }

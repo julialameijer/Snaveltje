@@ -19,7 +19,7 @@ Vuforia.ITrackableEventHandler
     private SceneSwitcher sceneSwitcherScript;
     private TrackableBehaviour mTrackableBehaviour;
     public static int st = 0;
-    private int imageName;
+    public int imageName;
 
     void Start()
     {
@@ -88,13 +88,14 @@ Vuforia.ITrackableEventHandler
     public void OnTrackableStateChanged(
         TrackableBehaviour.Status previousStatus,
         TrackableBehaviour.Status newStatus)
-    {
+    { 
         if (newStatus == null)
             throw new System.ArgumentNullException("newStatus");
         if (newStatus == TrackableBehaviour.Status.DETECTED ||
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
+
             st = 1;
             imageName = int.Parse(mTrackableBehaviour.Trackable.Name);
             print(imageName);
@@ -114,10 +115,8 @@ Vuforia.ITrackableEventHandler
 
     public void GoodScan()
     {
-        gameManagerScript.passQuestion(imageName);
-        print("Imagename: " + imageName);
-
-        
+        imageName = gameManagerScript.getNextQuestionIndex();
+        gameManagerScript.passQuestion(this.imageName);        
         sceneSwitcherScript.switchScene("GameScene");
     }
 
@@ -125,22 +124,5 @@ Vuforia.ITrackableEventHandler
     {
         wrongScan.SetActive(false);
         TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
-    }
-
-    public void TESTGoNextScene()
-    {
-        int questionnumber = gameManagerScript.getNextQuestionIndex();
-        if (questionnumber == gameManagerScript.getNextQuestionIndex())
-        {
-            print("Good Scan! " + questionnumber);
-            gameManagerScript.passQuestion(questionnumber);
-            //sceneSwitcherScript.switchScene("GameScene");   
-        }
-        else
-        {
-            print("Wrong Scan!");
-            TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
-
-        }
     }
 }

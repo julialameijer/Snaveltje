@@ -98,13 +98,11 @@ Vuforia.ITrackableEventHandler
 
             st = 1;
             imageName = int.Parse(mTrackableBehaviour.Trackable.Name);
-            print(imageName);
             TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
            
             if (imageName == gameManagerScript.getNextQuestionIndex())
             {
                 goodScan.SetActive(true);
-
             }
             else
             {

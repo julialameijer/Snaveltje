@@ -46,7 +46,6 @@ public class GamePin : MonoBehaviour
     {
         WWWForm wwwForm = new WWWForm();
         toBeChecked = int.Parse(gamePinInput.text);
-        print("To be checked: " + toBeChecked);
         wwwForm.AddField("gamepin", toBeChecked);
         UnityWebRequest www = UnityWebRequest.Post("https://snaveltje.wildsea.nl/gamepinLogin.php", wwwForm);
         yield return www.SendWebRequest();
@@ -55,14 +54,12 @@ public class GamePin : MonoBehaviour
 
         if(www.downloadHandler.text == "1")
         {
-            print("Text is 1");
             //GameObject.Find("Player2").SetActive(false);
             player3.SetActive(true);
         }
 
         else if(www.downloadHandler.text == "0" || www.downloadHandler.text == null)
         {
-            print("Text is 0");
             wrongText.gameObject.SetActive(true);
         }
 
@@ -77,7 +74,6 @@ public class GamePin : MonoBehaviour
     {
         gamePin = Random.Range(100000, 999999);
         //gamePin = 1;
-        print(gamePin);
         StartCoroutine(pushGamePin());
         host.SetActive(false);
         host1.SetActive(true);

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using System.Linq;
+using UnityEngine.Networking;
 
 public class QuestionHandler : MonoBehaviour
 {
@@ -105,5 +106,20 @@ public class QuestionHandler : MonoBehaviour
         {
             gamemanagerScript.lastScene();
         }
+    }
+
+    public void pushScoreCall()
+    {
+        StartCoroutine(pushScore(gamemanagerScript.rightAnswered, "Lalala"));
+    }
+
+    IEnumerator pushScore(int score, string teamName)
+    {
+        WWWForm wwwForm = new WWWForm();
+        wwwForm.AddField("score", score);
+        wwwForm.AddField("teamName", teamName);
+        UnityWebRequest www = UnityWebRequest.Post("https://snaveltje.wildsea.nl/pushScore.php", wwwForm);
+        yield return www.SendWebRequest();
+        print(www.downloadHandler.text);
     }
 }

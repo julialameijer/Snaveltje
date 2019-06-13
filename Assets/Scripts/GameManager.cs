@@ -91,13 +91,27 @@ public class GameManager : MonoBehaviour
         float timePlayed;
         double bonus;
         double finalscore;
-
-        bonus = rightAnswered * 32;
+        score = 0;
+        bonus = rightAnswered * 30;
         timePlayed = Mathf.Round((float)timer.Elapsed.TotalSeconds);
 
-        //timePlayed = (float)timer.Elapsed.TotalSeconds;
-        score = timePlayed * 50;
-        finalscore = score - bonus;
+        if(timePlayed <= 80)
+        {
+            score = timePlayed * 60;
+            finalscore = score + bonus;
+        }
+
+        if(timePlayed <= 120 && timePlayed > 80)
+        {
+            score = timePlayed * 50;
+            finalscore = score + bonus;
+        }
+
+        if(timePlayed > 120)
+        {
+            score = timePlayed * 30;
+            finalscore = score + bonus;
+        }
 
         timeTextObject = GameObject.Find("TimeText");
         scoreTextObject = GameObject.Find("ScoreText");
@@ -133,20 +147,17 @@ public class GameManager : MonoBehaviour
 
     public void passQuestion(int index)
     {
-        print("In passquestion " + index);
+
         //gameScene = SceneManager.GetSceneByBuildIndex(2);
         SceneManager.LoadScene("GameScene");
-        print("passquestion");
         StartCoroutine(ABC(index));
     }
 
     IEnumerator ABC(int index)
     {
         yield return 0;
-        print("in IEnumerator " + index);
         questionHandlerObject = GameObject.Find("QuestionHandler");
         questionHandlerScript = questionHandlerObject.GetComponent<QuestionHandler>();
-        print(questionHandlerObject);
         deletePlayedFromList(index);
         switch (index)
         {

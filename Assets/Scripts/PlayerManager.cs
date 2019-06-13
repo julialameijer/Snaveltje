@@ -29,13 +29,7 @@ public class PlayerManager : MonoBehaviour
         player.setName(nameInput);
     }
 
-    void Update()
-    {
-        if (SceneManager.GetActiveScene().name == "ScannerScene")
-        {
-            InvokeRepeating("pushScoreCall", 1f, 1f);
-        }
-    }
+
 
     public void callPlayerPush()
     {
@@ -52,18 +46,5 @@ public class PlayerManager : MonoBehaviour
         print(www.downloadHandler.text);    
     }
 
-    private void pushScoreCall()
-    {
-        StartCoroutine(pushScore(gameManager.rightAnswered, "Lalala"));
-    }
 
-    IEnumerator pushScore(int score, string teamName)
-    {
-        WWWForm wwwForm = new WWWForm();
-        wwwForm.AddField("score", score);
-        wwwForm.AddField("teamName", teamName);
-        UnityWebRequest www = UnityWebRequest.Post("https://snaveltje.wildsea.nl/pushScore.php", wwwForm);
-        yield return www.SendWebRequest();
-        print(www.downloadHandler.text);
-    }
 }

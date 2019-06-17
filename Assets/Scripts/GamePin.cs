@@ -25,11 +25,7 @@ public class GamePin : MonoBehaviour
 
     void Start()
     {
-        //sceneSwitcher = GameObject.Find("GameManager").GetComponent<SceneSwitcher>();
         isCreated = false;
-        //if(mnhoofd == ugly){
-        //iwannadii =true;
-        //)
     }
 
     IEnumerator pushGamePin()

@@ -1150,6 +1150,79 @@ MonoBehaviour:
     answerA: 7500
     answerB: 100000
     answerC: 50000
+  mixedQuestions:
+  - isPlayed: 0
+    question: 
+    rightAnswer: 
+    answerA: 
+    answerB: 
+    answerC: 
+  - isPlayed: 0
+    question: Waar haalt een apparaat zijn energie vandaan?
+    rightAnswer: C
+    answerA: Cellen
+    answerB: Newton
+    answerC: Elektriciteit
+  - isPlayed: 0
+    question: Wat in het menselijk lichaam groeit niet?
+    rightAnswer: C
+    answerA: Nagels
+    answerB: Organen
+    answerC: Tanden
+  - isPlayed: 0
+    question: Wat is een erts?
+    rightAnswer: A
+    answerA: Een gesteente met metaal er in.
+    answerB: Een gesteente met diamant er in.
+    answerC: Een gesteente met glas er in.
+  - isPlayed: 0
+    question: Wat is een makkelijke geleider
+    rightAnswer: A
+    answerA: Water
+    answerB: Hout
+    answerC: Spons
+  - isPlayed: 0
+    question: Wie mag er beginnen met schaken?
+    rightAnswer: A
+    answerA: Wit
+    answerB: Zwart
+    answerC: De jongste
+  - isPlayed: 0
+    question: Welke kleur heeft in de normale monopoly de goedkoopste straat?
+    rightAnswer: A
+    answerA: Bruin
+    answerB: Blauw
+    answerC: Groen
+  - isPlayed: 0
+    question: Op welke dag zijn we 2 minuten stil?
+    rightAnswer: B
+    answerA: 5 Mei
+    answerB: 4 Mei
+    answerC: Met Pinksteren
+  - isPlayed: 0
+    question: Een van de grootste gebouwen in Rome is een stadion. hoe heet dit gebouw?
+    rightAnswer: B
+    answerA: Villa Arena
+    answerB: Colosseum
+    answerC: Olympia
+  - isPlayed: 0
+    question: Wat is de vertaling van het word 'snel'?
+    rightAnswer: A
+    answerA: Fast
+    answerB: Slow
+    answerC: Jumping
+  - isPlayed: 0
+    question: Welke van deze dieren is een insect?
+    rightAnswer: C
+    answerA: Octopus
+    answerB: Lizard
+    answerC: Spider
+  - isPlayed: 0
+    question: "364 \xF7 26"
+    rightAnswer: C
+    answerA: 12
+    answerB: 11
+    answerC: 14
   englishQuestions:
   - isPlayed: 0
     question: 0
@@ -1805,7 +1878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.671692, y: -24.300003}
+  m_AnchoredPosition: {x: 2.6716309, y: -24.299988}
   m_SizeDelta: {x: -5.2433, y: -48.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1231800219

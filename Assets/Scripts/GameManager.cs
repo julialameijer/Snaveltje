@@ -46,6 +46,12 @@ public class GameManager : MonoBehaviour
     {
         timer.Elapsed.Seconds.ToString();
         updateTimeText.text = timer.Elapsed.TotalSeconds.ToString();
+
+        if(SceneManager.GetActiveScene().name == "ScannerScene")
+        {
+            scoretext = GameObject.Find("Scoretext").GetComponent<Text>();
+            scoretext.text = rightAnswered.ToString();
+        }
     }
 
     public void rightAnswerPlus()
@@ -95,19 +101,19 @@ public class GameManager : MonoBehaviour
         bonus = rightAnswered * 30;
         timePlayed = Mathf.Round((float)timer.Elapsed.TotalSeconds);
 
-        if(timePlayed <= 80)
+        if(timePlayed <= 200)
         {
             score = timePlayed * 60;
             finalscore = score + bonus;
         }
 
-        if(timePlayed <= 120 && timePlayed > 80)
+        if(timePlayed <= 750 && timePlayed > 500)
         {
             score = timePlayed * 50;
             finalscore = score + bonus;
         }
 
-        if(timePlayed > 120)
+        if(timePlayed > 750)
         {
             score = timePlayed * 30;
             finalscore = score + bonus;
@@ -212,6 +218,8 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("ScannerScene");
         startTimer();
     }
+
+    
 
 
 }

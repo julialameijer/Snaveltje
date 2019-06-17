@@ -32,6 +32,8 @@ public class QuestionHandler : MonoBehaviour
     [SerializeField] private OpenQuestion[] historyQuestions;
     [SerializeField] private Question[] historyMultipleChoiceQuestions;
 
+    [SerializeField] private Question[] mixedQuestions;
+
     [SerializeField] private OpenQuestion[] englishQuestions;
     [SerializeField] private Question[] englishMultipleChoiceQuestions;
 
@@ -58,7 +60,7 @@ public class QuestionHandler : MonoBehaviour
     {
         this.index = index;
         print("setmultiplechoice"); 
-        Question question = gameMultipleChoiceQuestions[index];
+        Question question = mixedQuestions[index];
         questionText.text = question.question;
         sceneSwitcher.newElement(multipleChoiceQuestion);
         A.text = question.answerA;
@@ -86,7 +88,7 @@ public class QuestionHandler : MonoBehaviour
 
     public void checkMultipleChoice(string answer)
     {
-        if(answer == gameMultipleChoiceQuestions[index].rightAnswer)
+        if(answer == mixedQuestions[index].rightAnswer)
         {
             sceneSwitcher.oldElement(multipleChoiceQuestion);
             sceneSwitcher.newElement(rightAnswer);
